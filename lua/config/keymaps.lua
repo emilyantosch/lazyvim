@@ -2,4 +2,18 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+-- General keymaps
 vim.keymap.set({ "i" }, "jk", "<Esc>", { desc = "Exit insert mode", silent = true })
+
+-- Window keymaps
+
+vim.keymap.set({ "n" }, "<leader>wv", ":vsplit<CR>", { desc = "Vertical split" })
+vim.keymap.set({ "n" }, "<leader>ws", ":split<CR>", { desc = "Horizontal split" })
+
+-- These are keymaps relating to hop.nvim
+local hop = require("hop")
+local search_pattern = function()
+  hop.hint_patterns({ multi_windows = true })
+end
+
+vim.keymap.set({ "n" }, "sp", search_pattern, { desc = "Search Pattern" })
