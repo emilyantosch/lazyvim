@@ -1,13 +1,25 @@
 {
-"name": "emmi_snips",
-	"contributes": {
-		"snippets": [
-			{
-				"language": [
-					"tex"
-				],
-				"path": "./latex.json"
-			}
-		]
-	}
+    "name": "emmi-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "plaintext",
+                    "markdown",
+                    "tex",
+                    "html",
+                    "global",
+                    "all"
+                ],
+                "path": "~/.config/nvim/lua/snippets/global.json"
+            },
+      {
+      "language": "tex",
+      "path": "~/.config/nvim/lua/snippets/latex.json",
+      },
+    ]
+  }
 }

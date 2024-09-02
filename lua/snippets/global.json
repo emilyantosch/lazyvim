@@ -1,0 +1,7 @@
+{
+  "superduper": {
+    "prefix": "@s",
+    "body": "_{${1:${TM_SELECTED_TEXT}}}",
+    "description": "subscript"
+  }
+}

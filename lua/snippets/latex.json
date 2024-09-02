@@ -1,9 +1,14 @@
 {
 	"monospace": {
 		"prefix": "mono",
-		"body": "\\texttt{$0}",
+		"body": ["\\texttt{$0}"],
     "description": "Insert monospace text"
 	},
+  "superduper": {
+        "prefix": "superduper",
+        "body": "_{${1:${TM_SELECTED_TEXT}}}",
+        "description": "subscript"
+    },
   /*
   "listing": {
     "prefix": "listing",
