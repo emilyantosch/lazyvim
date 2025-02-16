@@ -1,8 +1,9 @@
 return {
-{
-  "saghen/blink.cmp",
-    sources = {
-      default = { "lsp", "path", "snippets", "buffer", "codecompanion" }
+  {
+    "saghen/blink.cmp",
+    keymap = {
+      ["<C-j>"] = { "select_next", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
     },
   },
 }

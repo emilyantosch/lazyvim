@@ -1,0 +1,39 @@
+{
+  "sql_codeblock": {
+    "prefix": "sqlb",
+    "body": [
+      "```sql",
+      "\t$0",
+      "```"
+    ],
+    "description": "SQL code block"
+  },
+  "java_codeblock": {
+    "prefix": "javab",
+    "body": [
+      "```java",
+      "\t$0",
+      "```"
+    ],
+    "description": "Java code block"
+  },
+  "std_grid": {
+    "prefix": "stdgrid",
+    "body": [
+      "#grid(columns: (auto, auto), gutter: 0.25em, left, right)"
+    ],
+    "description": "Standard Grid"
+  },
+  "leftright": {
+    "prefix": "leftright",
+    "body": [
+      "#let left = [",
+      "",
+      "]",
+      "#let right = [",
+      "",
+      "]"
+    ],
+    "description": "Left/Right for grid"
+  }
+}
