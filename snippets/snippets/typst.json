@@ -35,5 +35,15 @@
       "]"
     ],
     "description": "Left/Right for grid"
+  },
+  "slide": {
+    "prefix": "slide",
+    "body": [
+      "#slide[",
+      "#heading(numbering: none)[$1]",
+      "$0",
+      "]"
+    ],
+    "description": "Left/Right for grid"
   }
 }
