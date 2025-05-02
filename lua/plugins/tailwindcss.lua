@@ -6,6 +6,8 @@ return {
         tailwindcss = {
           filetypes_include = {
             "rust",
+            "ts",
+            "tsx"
           },
         },
       },

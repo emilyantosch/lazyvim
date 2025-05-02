@@ -45,5 +45,21 @@
       "]"
     ],
     "description": "Left/Right for grid"
+  },
+  "figure": {
+    "prefix": "fig",
+    "body": [
+      "#figure(image(\"../assets/img/$0\"))"
+    ],
+    "description": "Standard figure"
+  },
+  "solution": {
+    "prefix": "solution",
+    "body": [
+      "#conclusion(title: [Solution])[",
+      "$0",
+      "]"
+    ],
+    "description": "Solution"
   }
 }
