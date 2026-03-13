@@ -11,13 +11,13 @@ local create_pr_fn = function(self)
   os.execute("gh pr create --title " .. title .. " --body " .. body .. " &>/dev/null")
 end
 
-local create_pr_with_editor_fn = function()
-  local snacks_window = require("snacks.win")
-  local win =
-    snacks_window.new({ on_close = create_pr_fn, height = 0.6, width = 0.6, backdrop = 40, border = "rounded" })
-  if not win then
-    return
-  end
+local run_workflow_dev_current_branch = function()
+  local user_input = vim.fn.input("Enter application: ")
+  os.execute("gh workflow run deploy-app.yaml --ref $(git branch --show-current) -f application=" .. user_input)
+end
+
+local view_workflows = function()
+  os.execute("gh workflow view --web deploy-app.yaml")
 end
 
 local view_pr_fn = function()
@@ -29,16 +29,16 @@ vim.keymap.set({ "i" }, "jk", "<Esc>", { silent = true })
 
 -- Obsidian Keymaps
 vim.keymap.set({ "n" }, "<leader>o", "", { desc = " Notes" })
-vim.keymap.set({ "n" }, "<leader>on", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>ok", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>od", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>ot", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>os", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>ol", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>ob", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "n" }, "<leader>og", "<cmd>ObsidianNew", { desc = "Create new note" })
-vim.keymap.set({ "v" }, "<leader>oe", "<cmd>ObsidianNew", { desc = "Create new note" })
+vim.keymap.set({ "n" }, "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Create new note" })
+vim.keymap.set({ "n" }, "<leader>ok", "<cmd>Obsidian quick_switch<CR>", { desc = "Quickswitch" })
+vim.keymap.set({ "n" }, "<leader>od", "<cmd>Obsidian dailies<CR>", { desc = "Check dailies" })
+vim.keymap.set({ "n" }, "<leader>ot", "<cmd>Obsidian today<CR>", { desc = "Today" })
+vim.keymap.set({ "n" }, "<leader>os", "<cmd>Obsidian search<CR>", { desc = "Search" })
 
-vim.keymap.set({ "n" }, "<leader>gc", create_pr_fn, { desc = "Create PR" })
-vim.keymap.set({ "n" }, "<leader>gC", create_pr_with_editor_fn, { desc = "Create PR with Editor" })
+-- PR
 vim.keymap.set({ "n" }, "<leader>gv", view_pr_fn, { desc = "View Current PR" })
+vim.keymap.set({ "n" }, "<leader>gwa", run_workflow_dev_current_branch, { desc = "Deploy current branch to DEV" })
+vim.keymap.set({ "n" }, "<leader>gwv", view_workflows, { desc = "Deploy current branch to DEV" })
+
+-- Diagnostics
+vim.keymap.set({ "n" }, "<leader>]", "<cmd>Trouble diagnostics jump_close<CR>", { desc = "Jump to next diagnostics" })

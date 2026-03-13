@@ -1,7 +1,9 @@
 ---@param title string
 ---@return string
 local custom_zettel_id = function(title)
-  local id = tostring(os.time()) .. "-" .. title
+  local lower_title = string.lower(title)
+  local kebab_case_title = string.gsub(lower_title, " ", "-")
+  local id = tostring(os.time()) .. "-" .. kebab_case_title
   return id
 end
 
