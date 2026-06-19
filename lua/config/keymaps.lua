@@ -27,6 +27,9 @@ end
 -- Quit using "jk"
 vim.keymap.set({ "i" }, "jk", "<Esc>", { silent = true })
 
+-- Run Just in Split
+vim.keymap.set("n", "<leader>r", ":!tmux split-window -h 'just'<CR>", { desc = "Ask pi" })
+
 -- Obsidian Keymaps
 vim.keymap.set({ "n" }, "<leader>o", "", { desc = " Notes" })
 vim.keymap.set({ "n" }, "<leader>on", "<cmd>Obsidian new<CR>", { desc = "Create new note" })

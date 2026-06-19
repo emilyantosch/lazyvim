@@ -20,6 +20,14 @@ return {
         name = "personal",
         path = "~/projects/notes/emmiNotes/",
       },
+      {
+        name = "moia",
+        path = "~/projects/notes/moia/",
+      },
+      {
+        name = "everoak",
+        path = "~/projects/notes/everoak/",
+      },
     },
     note_id_func = custom_zettel_id,
   },
