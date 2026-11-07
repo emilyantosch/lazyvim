@@ -60,5 +60,6 @@
   "typst-preview.nvim": { "branch": "master", "commit": "87db18b8d19c8b0eed399f52e4c527ce5afe4817" },
   "venv-selector.nvim": { "branch": "main", "commit": "cc4bb3975de8835291f9bb45889e96c6b2795fc4" },
   "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" },
+  "yanky.nvim": { "branch": "main", "commit": "edcbe0f6d693b9e7860626094f886a2d79cfe63b" },
   "yazi.nvim": { "branch": "main", "commit": "8d6c25cb4e7c5702d6cd5a263cb36129fa78aa4c" }
 }
